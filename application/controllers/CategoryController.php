@@ -3,7 +3,7 @@ class CategoryController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('Category');
+        $this->load->model('category');
         $this->load->library('session');
     }
     /*
@@ -14,8 +14,8 @@ class CategoryController extends CI_Controller {
 	santosh salve
     */
     public function manageCategory() { 
-        $data['Categorys'] = $this->Category->getAll();        
-        $data['contents'] = 'category/manage-Category';
+        $data['category'] = $this->category->getAll();        
+        $data['contents'] = 'category/manage-category';
 		$this->load->view('layout/main', $data);
     }
     /*
@@ -24,7 +24,7 @@ class CategoryController extends CI_Controller {
     created at 15-08-22.
     */
     public function addCategory() {
-        $data['contents'] = 'category/add-Category';
+        $data['contents'] = 'category/add-category';
         $this->load->view('layout/main', $data);
     }
     /*
@@ -34,9 +34,9 @@ class CategoryController extends CI_Controller {
     */
     public function addCategoryPost() {
         $data['category_name'] = $this->input->post('category_name');
-    $this->Category->insert($data);
+    $this->category->insert($data);
         $this->session->set_flashdata('success', 'Category added Successfully');
-        redirect('manage-Category');
+        redirect('manage-category');
     }
     /*
     function for edit Category get
@@ -44,10 +44,10 @@ class CategoryController extends CI_Controller {
     created by your name
     created at 15-08-22.
     */
-    public function editCategory($Category_id) {
-        $data['Category_id'] = $Category_id;
-        $data['Category'] = $this->Category->getDataById($Category_id);
-        $data['contents'] = 'category/edit-Category';
+    public function editCategory($category_id) {
+        $data['category_id'] = $category_id;
+        $data['category'] = $this->category->getDataById($category_id);
+        $data['contents'] = 'category/edit-category';
         $this->load->view('layout/main', $data);
     }
     /*
@@ -56,13 +56,13 @@ class CategoryController extends CI_Controller {
     created at 15-08-22.
     */
     public function editCategoryPost() {
-        $Category_id = $this->input->post('Category_id');
-        $Category = $this->Category->getDataById($Category_id);
+        $category_id = $this->input->post('category_id');
+        $category = $this->category->getDataById($category_id);
         $data['category_name'] = $this->input->post('category_name');
-    $edit = $this->Category->update($Category_id,$data);
+    $edit = $this->category->update($category_id,$data);
         if ($edit) {
             $this->session->set_flashdata('success', 'Category Updated');
-            redirect('manage-Category');
+            redirect('manage-category');
         }
     }
     /*
@@ -70,30 +70,30 @@ class CategoryController extends CI_Controller {
     created by your name
     created at 15-08-22.
     */
-    public function viewCategory($Category_id) {
-        $data['Category_id'] = $Category_id;
-        $data['Category'] = $this->Category->getDataById($Category_id);
-        $data['contents'] = 'category/view-Category';
+    public function viewCategory($category_id) {
+        $data['category_id'] = $category_id;
+        $data['category'] = $this->category->getDataById($category_id);
+        $data['contents'] = 'category/view-category';
         $this->load->view('layout/main', $data);
     }
     /*
     function for delete Category    created by your name
     created at 15-08-22.
     */
-    public function deleteCategory($Category_id) {
-        $delete = $this->Category->delete($Category_id);
-        $this->session->set_flashdata('success', 'Category deleted');
-        redirect('manage-Category');
+    public function deleteCategory($category_id) {
+        $delete = $this->category->delete($category_id);
+        $this->session->set_flashdata('success', 'category deleted');
+        redirect('manage-category');
     }
     /*
     function for activation and deactivation of Category.
     created by your name
     created at 15-08-22.
     */
-    public function changeStatusCategory($Category_id) {
-        $edit = $this->Category->changeStatus($Category_id);
-        $this->session->set_flashdata('success', 'Category '.$edit.' Successfully');
-        redirect('manage-Category');
+    public function changeStatusCategory($category_id) {
+        $edit = $this->category->changeStatus($category_id);
+        $this->session->set_flashdata('success', 'category '.$edit.' Successfully');
+        redirect('manage-category');
     }
 
     public function get_items()

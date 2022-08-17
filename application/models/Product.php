@@ -1,58 +1,58 @@
 <?php
 
-class Category extends CI_Model {
+class Product extends CI_Model {
 
     /*
-    return all Categorys.
+    return all Products.
     created by your name
     created at 17-08-22.
     */
     public function getAll() {
-        return $this->db->get('category')->result();
+        return $this->db->get('product')->result();
     }
     /*
-    function for create Category.
-    return Category inserted id.
+    function for create Product.
+    return Product inserted id.
     created by your name
     created at 17-08-22.
     */
     public function insert($data) {
-        $this->db->insert('category', $data);
+        $this->db->insert('product', $data);
         return $this->db->insert_id();
     }
     /*
-    return Category by id.
+    return Product by id.
     created by your name
     created at 17-08-22.
     */
     public function getDataById($id) {
         $this->db->where('id', $id);
-        return $this->db->get('category')->result();
+        return $this->db->get('product')->result();
     }
     /*
-    function for update Category.
+    function for update Product.
     return true.
     created by your name
     created at 17-08-22.
     */
     public function update($id,$data) {
         $this->db->where('id', $id);
-        $this->db->update('category', $data);
+        $this->db->update('product', $data);
         return true;
     }
     /*
-    function for delete Category.
+    function for delete Product.
     return true.
     created by your name
     created at 17-08-22.
     */
     public function delete($id) {
         $this->db->where('id', $id);
-        $this->db->delete('category');
+        $this->db->delete('product');
         return true;
     }
     /*
-    function for change status of Category.
+    function for change status of Product.
     return activated of deactivated.
     created by your name
     created at 17-08-22.

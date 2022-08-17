@@ -53,14 +53,25 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// routes for Category.
-$route['manage-Category']="CategoryController/ManageCategory";
-$route['change-status-Category/(:num)']="CategoryController/changeStatusCategory/$1";
-$route['edit-Category/(:num)']="CategoryController/editCategory/$1";
-$route['edit-Category-post']="CategoryController/editCategoryPost";
-$route['delete-Category/(:num)']="CategoryController/deleteCategory/$1";
-$route['add-Category']="CategoryController/addCategory";
-$route['add-Category-post']="CategoryController/addCategoryPost";
-$route['view-Category/(:num)']="CategoryController/viewCategory/$1";
+// routes for category.
+$route['manage-category']="CategoryController/ManageCategory";
+$route['change-status-category/(:num)']="CategoryController/changeStatusCategory/$1";
+$route['edit-category/(:num)']="CategoryController/editCategory/$1";
+$route['edit-category-post']="CategoryController/editCategoryPost";
+$route['delete-category/(:num)']="CategoryController/deleteCategory/$1";
+$route['add-category']="CategoryController/addCategory";
+$route['add-category-post']="CategoryController/addCategoryPost";
+$route['view-category/(:num)']="CategoryController/viewCategory/$1";
 $route['get_items'] = "CategoryController/get_items";
-// end of Category routes
+// end of category routes
+
+// routes for product.
+$route['manage-product']="ProductController/ManageProduct";
+$route['change-status-product/(:num)']="ProductController/changeStatusProduct/$1";
+$route['edit-product/(:num)']="ProductController/editProduct/$1";
+$route['edit-product-post']="ProductController/editProductPost";
+$route['delete-product/(:num)']="ProductController/deleteProduct/$1";
+$route['add-product']="ProductController/addProduct";
+$route['add-product-post']="ProductController/addProductPost";
+$route['view-product/(:num)']="ProductController/viewProduct/$1";
+// end of product routes

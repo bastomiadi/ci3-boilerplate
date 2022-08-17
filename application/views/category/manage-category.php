@@ -2,7 +2,7 @@
   <div class="box-header">
     <h2>List Categories</h2>
     <div class="float-right">
-      <a href="<?php echo site_url(); ?>add-Category">Add Category</a>
+      <a href="<?php echo site_url(); ?>add-category">Add Category</a>
     </div>
   </div>
   
@@ -40,8 +40,8 @@ $(document).ready(function() {
               <button type="button" class="btn btn-primary">
                 <a href="<?php echo site_url()?>change-status-category/`+ row.id +`" >` + data.status == 0 ? 'Activate' : 'Deactivate' + `</a>
               </button>
-              <button type="button" class="btn btn-primary"><a href="<?php echo site_url()?>edit-Category/`+ row.id +`" >Edit</a></button>
-              <button type="button" class="btn btn-danger"><a href="<?php echo site_url()?>delete-Category/`+ row.id +`" onclick="return confirm('are you sure to delete')">Delete</a></button>
+              <button type="button" class="btn btn-primary"><a href="<?php echo site_url()?>edit-category/`+ row.id +`" >Edit</a></button>
+              <button type="button" class="btn btn-danger"><a href="<?php echo site_url()?>delete-category/`+ row.id +`" onclick="return confirm('are you sure to delete')">Delete</a></button>
               `;
             }
           }

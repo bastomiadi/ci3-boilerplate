@@ -1,11 +1,11 @@
 <div class="container">
   <ul>
-    <li><a href="<?php echo site_url(); ?>manage-Category">Manage Category</a></li>
-    <li><a href="<?php echo site_url(); ?>add-Category">Add Category</a></li>
+    <li><a href="<?php echo site_url(); ?>manage-category">Manage Category</a></li>
+    <li><a href="<?php echo site_url(); ?>add-category">Add Category</a></li>
   </ul>
 
   <h2>Update Category</h2>  
-<form role="form" method="post" action="<?php echo site_url()?>edit-Category-post" enctype="multipart/form-data">
+<form role="form" method="post" action="<?php echo site_url()?>edit-category-post" enctype="multipart/form-data">
 
  <input type="hidden" value="<?php echo $Category[0]->id ?>" name="Category_id">
 
