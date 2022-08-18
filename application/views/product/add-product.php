@@ -31,7 +31,10 @@
         <input type="number" class="form-control" id="product_stock" name="product_stock">
       </div>
 
-      <input type="file" id="image" name="image">
+      <div class="form-group">
+        <label for="image">Image:</label><br>
+        <input type="file" id="image" name="image">
+      </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

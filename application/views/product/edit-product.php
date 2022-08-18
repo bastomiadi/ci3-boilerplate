@@ -35,6 +35,7 @@
     <input type="number" value="<?php echo $product[0]->product_stock ?>" class="form-control" id="product_stock" name="product_stock">
   </div>
   <div class="form-group">
+    <img width="20%" src="<?php echo base_url().'./uploads/'.$product[0]->image; ?>" /><br>
     <label for="image">Image:</label><br>
     <input type="file" id="image" name="image">
   </div>

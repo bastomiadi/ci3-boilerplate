@@ -47,7 +47,8 @@ class ProductController extends CI_Controller {
 
         if(!empty($_FILES['image']['name'])){
 
-            $new_name = time() . '-' . $_FILES["image"]['name']; 
+            //$new_name = time() . '-' . $_FILES["image"]['name']; 
+            $new_name = time(); 
 
             //$config['max_size']             = 1000000;
             // $config['max_width']            = 1024;
@@ -73,11 +74,9 @@ class ProductController extends CI_Controller {
             else
             {
                     $image = array('upload_data' => $this->upload->data());
-
+                    $data['image'] = $new_name . $image['upload_data']['file_ext'];
                     //$this->load->view('upload_success', $data);
             }
-
-            $data['image'] = $new_name;
 
         }
         $this->product->insert($data);
@@ -119,7 +118,8 @@ class ProductController extends CI_Controller {
 
         if(!empty($_FILES['image']['name'])){
 
-            $new_name = time() . '-' . $_FILES["image"]['name']; 
+            //$new_name = time() . '-' . $_FILES["image"]['name']; 
+            $new_name = time(); 
 
             //$config['max_size']             = 1000000;
             // $config['max_width']            = 1024;
@@ -151,11 +151,12 @@ class ProductController extends CI_Controller {
             else
             {
                     $image = array('upload_data' => $this->upload->data());
+                    $data['image'] = $new_name . $image['upload_data']['file_ext'];
 
                     //$this->load->view('upload_success', $data);
             }
 
-            $data['image'] = $new_name;
+           
 
         }
         
