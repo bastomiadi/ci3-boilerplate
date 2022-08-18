@@ -34,6 +34,11 @@
     <label for="product_stock">Product_stock:</label>
     <input type="number" value="<?php echo $product[0]->product_stock ?>" class="form-control" id="product_stock" name="product_stock">
   </div>
+  <div class="form-group">
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image">
+  </div>
+ 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

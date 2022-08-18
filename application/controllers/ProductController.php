@@ -45,7 +45,7 @@ class ProductController extends CI_Controller {
         $data['product_price'] = $this->input->post('product_price');
         $data['product_stock'] = $this->input->post('product_stock');
 
-        if(!empty($_FILES['image'])){
+        if(!empty($_FILES['image']['name'])){
 
             $new_name = time() . '-' . $_FILES["image"]['name']; 
 
@@ -103,6 +103,7 @@ class ProductController extends CI_Controller {
     created at 17-08-22.
     */
     public function editProductPost() {
+        
         $product_id = $this->input->post('product_id');
         $product = $this->product->getDataById($product_id);
         $data['category_id'] = $this->input->post('category_id');
@@ -110,7 +111,56 @@ class ProductController extends CI_Controller {
         $data['product_detail'] = $this->input->post('product_detail');
         $data['product_price'] = $this->input->post('product_price');
         $data['product_stock'] = $this->input->post('product_stock');
-    $edit = $this->product->update($product_id,$data);
+
+        // echo '<pre>';
+        // print_r();
+        // echo '</pre>';
+        // die;
+
+        if(!empty($_FILES['image']['name'])){
+
+            $new_name = time() . '-' . $_FILES["image"]['name']; 
+
+            //$config['max_size']             = 1000000;
+            // $config['max_width']            = 1024;
+            // $config['max_height']           = 768;
+
+            $config['upload_path']     = './uploads/';
+            $config['allowed_types']   = '*';
+            $config['file_name']       = $new_name;
+
+
+            $path = $config['upload_path'] . $product[0]->image;
+            if(is_file($path)){
+                unlink($path);
+            }
+
+            $this->load->library('upload', $config);
+            
+            if (!$this->upload->do_upload('image'))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+
+                    // echo '<pre>';
+                    // print_r($error);
+                    // echo '</pre>';
+                    // die;
+
+                    //$this->load->view('upload_form', $error);
+            }
+            else
+            {
+                    $image = array('upload_data' => $this->upload->data());
+
+                    //$this->load->view('upload_success', $data);
+            }
+
+            $data['image'] = $new_name;
+
+        }
+        
+        $edit = $this->product->update($product_id,$data);
+
         if ($edit) {
             $this->session->set_flashdata('success', 'Product Updated');
             redirect('manage-product');
