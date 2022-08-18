@@ -7,8 +7,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	  <div class="navbar no-radius">
         <!-- brand -->
         <a class="navbar-brand">
-        	<div ui-include="'../assets/images/logo.svg'"></div>
-        	<img src="../assets/images/logo.png" alt="." class="hide">
+        	<div ui-include="<?= base_url() ?>'flatkit/assets/images/logo.svg'"></div>
+        	<img src="<?= base_url() ?>flatkit/assets/images/logo.png" alt="." class="hide">
         	<span class="hidden-folded inline">Flatkit</span>
         </a>
         <!-- / brand -->

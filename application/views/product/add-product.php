@@ -4,7 +4,7 @@
     <li class="active" ><a href="<?php echo site_url(); ?>add-product">Add Product</a></li>
 
   <h2>Add Product</h2>  
-    <form role="form" method="post" action="<?php echo site_url()?>/add-product-post" >
+    <form role="form" method="post" action="<?php echo site_url()?>/add-product-post" enctype="multipart/form-data">
               <div class="form-group">
         <label for="category_id">Category_id:</label>
         <select id="category_id" name="category_id" class="form-control">
@@ -30,6 +30,9 @@
         <label for="product_stock">Product_stock:</label>
         <input type="number" class="form-control" id="product_stock" name="product_stock">
       </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+      <input type="file" id="image" name="image">
+
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

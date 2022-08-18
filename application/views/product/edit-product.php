@@ -1,15 +1,14 @@
 <div class="container">
-
-    <li><a href="<?php echo site_url(); ?>manage-product">Manage Product</a></li>
-    <li><a href="<?php echo site_url(); ?>add-product">Add Product</a></li>
+<ul>
+  <li><a href="<?php echo site_url(); ?>manage-product">Manage Product</a></li>
+  <li><a href="<?php echo site_url(); ?>add-product">Add Product</a></li>
+</ul>
 
   <h2>Update Product</h2>  
 <form role="form" method="post" action="<?php echo site_url()?>edit-product-post" enctype="multipart/form-data">
 
- <input type="hidden" value="<?php echo $product[0]->id ?>"   name="product_id">
-
-
-      <div class="form-group">
+ <input type="hidden" value="<?php echo $product[0]->id ?>" name="product_id">
+  <div class="form-group">
     <label for="category_id">Category_id:</label>
     <select id="category_id" name="category_id" class="form-control">
     <option value="none" selected="selected">------------Select Category------------</option>
