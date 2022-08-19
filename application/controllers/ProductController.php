@@ -59,8 +59,13 @@ class ProductController extends CI_Controller {
             $config['file_name']       = $new_name;
 
             $this->load->library('upload', $config);
+
+            // echo '<pre>';
+            // print_r(array('upload_data' => $this->upload->data()));
+            // echo '</pre>';
+            // die;
             
-            if (!$this->upload->do_upload('image'))
+            if (!$this->upload->do_upload('image')) // nama form
             {
                     $error = array('error' => $this->upload->display_errors());
 

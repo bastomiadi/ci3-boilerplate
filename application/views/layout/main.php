@@ -44,8 +44,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="<?php echo base_url(); ?>flatkit/libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js"></script>
   <script src="<?php echo base_url(); ?>flatkit/libs/jquery/PACE/pace.min.js"></script>
 
-  
-
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
@@ -212,7 +210,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   </div>
 <!-- endbuild -->
-</body>
 
 <script src="<?php echo base_url(); ?>flatkit/html/scripts/config.lazyload.js"></script>
 
@@ -232,5 +229,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- ajax -->
   <script src="<?php echo base_url(); ?>flatkit/libs/jquery/jquery-pjax/jquery.pjax.js"></script>
   <script src="<?php echo base_url(); ?>flatkit/html/scripts/ajax.js"></script>
+</body>
 </html>
 

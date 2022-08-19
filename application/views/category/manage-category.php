@@ -26,7 +26,7 @@ $(document).ready(function() {
     var table = $('#item-list').DataTable({
       responsive: true,
       //processing: true, //Feature control the processing indicator.
-      //serverSide: true, //Feature control DataTables' server-side processing mode.
+      serverSide: true, //Feature control DataTables' server-side processing mode.
       ajax: {
           url: `<?= base_url() . "get_items" ?>`,
           type: "GET"
